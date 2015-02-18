@@ -1,3 +1,47 @@
+
+
+
+
+#require "pry"
+def say(msg)
+  puts "=> #{msg}"
+end
+
+
+loop do
+  puts "Vuoi fare un calcolo?"
+  answer = gets.chomp
+
+  break if answer == "No"
+
+  say "Dimmi il primo numero"
+  num_1 = gets.chomp
+
+  say "Dimmi il secondo numero"
+  num_2 = gets.chomp
+
+  say "1) Addizione 2) Sottrazione 3) Moltiplicazione 4) Divisione"
+  operator = gets.chomp
+
+#binding.pry
+
+  if operator == "1"
+    result = num_1.to_i + num_2.to_i
+  elsif operator == "2"
+    result = num_1.to_i - num_2.to_i
+  elsif operator =="3"
+    result = num_1.to_i * num_2.to_i
+  else operator == "4"
+    result = num_1.to_f / num_2.to_f
+  end
+
+  say "Il risultato è #{result}"
+
+  
+end
+
+
+#Some notes - Sorry for the italian :)
 #1. Interpolazione delle stringhe vs conchenazione
 #   La differenza tra puts "bla bla #{variabile}" e "bla bla" + variabile è che il primo trasforma direttamente in .to_s.
 
@@ -16,35 +60,3 @@
 
 #7. Se manipolo una variabile dentro un metodo, sto solo utilizzando il valore, non cambia la variabile.
 #   Ma ci sono metodi che cambiano la variabile, come .uniq! Insomma dipende.
-
-
-
-#require "pry"
-
-
-def say(msg)
-  puts "=> #{msg}"
-end
-
-say "Dimmi il primo numero"
-num_1 = gets.chomp
-
-say "Dimmi il secondo numero"
-num_2 = gets.chomp
-
-say "1) Addizione 2) Sottrazione 3) Moltiplicazione 4) Divisione"
-operator = gets.chomp
-
-#binding.pry
-
-if operator == "1"
-  result = num_1.to_i + num_2.to_i
-elsif operator == "2"
-  result = num_1.to_i - num_2.to_i
-elsif operator =="3"
-  result = num_1.to_i * num_2.to_i
-else operator == "4"
-  result = num_1.to_f / num_2.to_f
-end
-
-say "Il risultato è #{result}"

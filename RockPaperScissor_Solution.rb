@@ -19,7 +19,7 @@ loop do
     player_choice = gets.chomp.downcase
   end until CHOICES.keys.include?(player_choice)
 
-  computer_choice = CHOICES.keys.sample
+  computer_choice = CHOICES.keys.sample.to_i
 
   if player_choice == computer_choice 
     puts "It's a tie"

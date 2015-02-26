@@ -40,6 +40,7 @@ def player_picks_square(board)
   board[position] = "X"
 end
 
+###
 def computer_picks_square(board)
   if board.values.count("O") == 2
    position = board.select{|k,v| v == ' '}.keys.first
@@ -49,6 +50,7 @@ def computer_picks_square(board)
     board[position] = "O"
   end
 end
+###
 
 def check_winner(board)
   winning_lines = [[1,2,3], [4,5,6], [7,8,9], [1,4,7], [2,5,8], [3,6,9], [1,5,9], [3,5,7]]

@@ -21,11 +21,9 @@ def sum_deck(to_sum)
       puts "Vittoria!"
     elsif sum > 21
       puts "Sconfitta!"
-      exit
-    else
-      puts "La mano è #{sum}"
+      exit  
     end
-    return sum
+  return sum
 end
 
 #Let player decide if pick a new card
@@ -43,8 +41,10 @@ def new_card_player(to_sum)
 
     if sum_deck(Player_1) > sum_deck(Computer_1)
       puts "Player won"
+      exit
     else
       puts "Computer won"
+      exit
     end
   end
 
@@ -90,13 +90,13 @@ while sum_deck(Computer_1) < 17 do
   #Player's game
   sum_deck(Player_1)
   new_card_player(Player_1)
-  puts "Player has " 
+  puts "Player has #{sum_deck(Player_1)}" 
  
 
   #Computer's game
   new_card_computer(Computer_1)
   puts "Computer has " 
-  sum_deck(Computer_1)
+  puts "Computer has #{sum_deck(Computer_1)}" 
 end
 
 loop do

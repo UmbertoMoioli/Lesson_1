@@ -94,8 +94,7 @@ while sum_deck(Computer_1) < 17 do
  
 
   #Computer's game
-  new_card_computer(Computer_1)
-  puts "Computer has " 
+  new_card_computer(Computer_1) 
   puts "Computer has #{sum_deck(Computer_1)}" 
 end
 
